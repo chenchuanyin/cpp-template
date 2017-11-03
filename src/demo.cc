@@ -7,4 +7,5 @@ void foo(int x) { bar(x + 1); }
 int main(int argc, char **argv) {
   google::InstallFailureSignalHandler();
   foo(1);
+  return 0;
 }
