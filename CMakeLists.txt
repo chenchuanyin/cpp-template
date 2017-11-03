@@ -4,7 +4,7 @@ project(test C CXX)
 set(CMAKE_CXX_FLAGS "-std=c++11 -fPIC -g")
 set(BUILD_SHARED_LIBS ON)
 set(CMAKE_SOURCE_DIR src)
-message($CMAKE_SOURCE_DIR)
+
 
 add_subdirectory(third_party/glog)
 add_subdirectory(third_party/gflags)
