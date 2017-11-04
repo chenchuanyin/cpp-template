@@ -15,18 +15,12 @@ env:
   - CONFIG=Release
   - CONFIG=Debug
 
-install:
-  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
-      PATH=~/.local/bin:${PATH};
-      pip install --user --upgrade pip;
-      pip install --user cpp-coveralls;
-    fi
+before_install:
+  - pip install --user cpp-coveralls;
 
 script:
   - git submodule update --init
-  - mkdir build && cd build && cmake -D CMAKE_BUILD_TYPE=$CONFIG -D GFLAGS_BUILD_SHARED_LIBS=ON -D GFLAGS_BUILD_STATIC_LIBS=ON -D GFLAGS_BUILD_TESTING=ON .. && cmake --build . --config $CONFIG && ctest
+  - mkdir build && cd build && cmake -D CMAKE_BUILD_TYPE=$CONFIG -D GFLAGS_BUILD_SHARED_LIBS=ON -D GFLAGS_BUILD_STATIC_LIBS=ON -D GFLAGS_BUILD_TESTING=ON -D COVERAGE=1 .. && cmake --build . --config $CONFIG && ctest
 
 after_success:
-  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
-      coveralls --include src --include include --gcov-options '\-lp' -e third_party -e build;
-    fi
+  - coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*" -E build -E third_party
