@@ -14,7 +14,7 @@ add_executable(demo ${CMAKE_SOURCE_DIR}/demo.cc)
 target_link_libraries(demo gflags glog)
 
 if (COVERAGE)
-  target_compile_options(unittest PRIVATE --coverage)
+  # target_compile_options(unittest PRIVATE --coverage)
   add_executable(unittest ${CMAKE_SOURCE_DIR}/gtest.cc)
   target_link_libraries(unittest PRIVATE --coverage gtest_main gtest)
 endif()
