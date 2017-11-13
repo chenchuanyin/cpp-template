@@ -1,6 +1,3 @@
-MKDIR_P := mkdir -p
-OUT_DIR := build
-
 deps:
 	git submodule update --init --recursive
 	mkdir -p out
