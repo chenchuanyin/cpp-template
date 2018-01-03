@@ -15,4 +15,4 @@ add_subdirectory(third_party/abseil-cpp)
 add_subdirectory(src)
 
 add_executable(demo ${CMAKE_SOURCE_DIR}/demo.cc)
-target_link_libraries(demo gflags glog absl_base absl_algorithm absl_container absl_synchronization cctz)
+target_link_libraries(demo base gflags glog absl_base absl_algorithm absl_container absl_synchronization cctz)

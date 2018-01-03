@@ -1,0 +1,10 @@
+-Wall
+-std=c++11
+-Wc++-compat
+-I.
+-Ithird_party/googletest/include
+-Ithird_party/benchmark/include
+-Ithird_party/googletest
+-Ithird_party/abseil-cpp
+-Ithird_party/googletest/googletest/include
+-Ithird_party/googletest/googlemock/include
