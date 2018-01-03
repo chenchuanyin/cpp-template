@@ -10,8 +10,6 @@
 #include "glog/logging.h"
 #include "glog/raw_logging.h"
 
-#include "gtest/gtest.h"
-
 #include <algorithm>
 #include <iostream>
 #include <vector>
