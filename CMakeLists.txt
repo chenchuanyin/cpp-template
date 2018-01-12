@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(test C CXX)
+project(demo C CXX)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -fPIC -g")
 set(BUILD_SHARED_LIBS OFF)
