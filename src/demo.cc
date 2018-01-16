@@ -9,22 +9,28 @@
 #include "absl/synchronization/mutex.h"
 #include "glog/logging.h"
 #include "glog/raw_logging.h"
+#include "glog/stl_logging.h"
+#include "gtest/gtest.h"
 
 #include <algorithm>
 #include <iostream>
+#include <string>
 #include <vector>
 
 int main(int argc, char **argv) {
   google::InitGoogleLogging(argv[0]);
-  FLAGS_log_dir = "./log";
-  LOG(INFO) << "hi demo";
+  std::vector<std::string> string_vec;
 
+  LOG(WARNING) << "hi demo";
+  LOG(ERROR) << "error";
+  LOG(INFO) << "info";
+  LOG_IF(ERROR, 1 == 0) << "1 == 0";
   absl::Mutex mutex;
   absl::MutexLock lock(&mutex);
   absl::synchronization_internal::ThreadPool pool(4);
   while (1) {
     ::sleep(1);
-    pool.Schedule([]() { LOG(INFO) << "1"; });
+    pool.Schedule([]() { LOG(ERROR) << "1"; });
   }
   return 0;
 }

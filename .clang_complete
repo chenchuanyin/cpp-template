@@ -8,3 +8,5 @@
 -Ithird_party/abseil-cpp
 -Ithird_party/googletest/googletest/include
 -Ithird_party/googletest/googlemock/include
+-Iout/third_party/glog
+-Iout/third_party/gflags/include
