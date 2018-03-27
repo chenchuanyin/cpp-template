@@ -13,4 +13,5 @@ add_subdirectory(third_party/glog)
 add_subdirectory(third_party/cctz)
 add_subdirectory(third_party/abseil-cpp)
 
+include_directories(src)
 add_subdirectory(src)
