@@ -16,4 +16,4 @@ env:
   - CONFIG=Debug
 
 script:
-  - make build
+  - make package
