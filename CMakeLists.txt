@@ -1,6 +1,4 @@
 cmake_minimum_required(VERSION 3.0)
-set(CMAKE_CXX_COMPILER "/usr/local/bin/g++")
-set(CMAKE_C_COMPILER "/usr/local/bin/gcc")
 project(cpp-template C CXX)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -fPIC -g")
