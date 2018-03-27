@@ -2,6 +2,7 @@
 -std=c++11
 -Wc++-compat
 -I.
+-Isrc
 -Ithird_party/googletest/include
 -Ithird_party/benchmark/include
 -Ithird_party/googletest
