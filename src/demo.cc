@@ -18,9 +18,6 @@
 #include <vector>
 
 int main(int argc, char **argv) {
-  google::InitGoogleLogging(argv[0]);
-  std::vector<std::string> string_vec;
-
   LOG(WARNING) << "hi demo";
   LOG(ERROR) << "error";
   LOG(INFO) << "info";

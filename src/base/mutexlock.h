@@ -4,6 +4,7 @@
 #include "mutex.h"
 
 namespace base {
+
 class MutexLock {
  public:
   MutexLock(Mutex& mu) : mu_(mu) { mu_.Lock(); }
@@ -16,6 +17,6 @@ class MutexLock {
   MutexLock operator=(const Mutex& other) = delete;
 };
 
-}  // namespace base
+}
 
-#endif  // BASE_MUTEXLOCK_H__
+#endif

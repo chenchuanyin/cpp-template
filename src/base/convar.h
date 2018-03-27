@@ -23,7 +23,7 @@ class ConVar {
 
  private:
   pthread_cond_t con_;
-  Mutex& mutex_;
+  Mutex&         mutex_;
 
   ConVar(const ConVar& other) = delete;
   ConVar operator=(const ConVar& other) = delete;

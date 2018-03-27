@@ -1,6 +1,6 @@
 set(CMAKE_SOURCE_DIR .)
 add_subdirectory(base)
-
+add_subdirectory(event)
 
 add_executable(demo ${CMAKE_SOURCE_DIR}/demo.cc)
 target_link_libraries(demo base gflags glog absl_base absl_algorithm absl_container absl_synchronization cctz gtest gtest_main)
@@ -10,6 +10,9 @@ target_link_libraries(demo_benchmark benchmark)
 
 add_executable(uint2str_benchmark ${CMAKE_SOURCE_DIR}/uint2str_benchmark.cc)
 target_link_libraries(uint2str_benchmark benchmark)
+
+add_executable(cd_benchmark ${CMAKE_SOURCE_DIR}/cd_benchmark.cc)
+target_link_libraries(cd_benchmark benchmark)
 
 add_executable(uint2str_unittest ${CMAKE_SOURCE_DIR}/uint2str_unittest.cc)
 target_link_libraries(uint2str_unittest gtest gtest_main)
@@ -22,3 +25,6 @@ target_link_libraries(gflags_demo gflags glog)
 
 add_executable(string_unittest ${CMAKE_SOURCE_DIR}/string_unittest.cc)
 target_link_libraries(string_unittest glog absl_strings gtest gtest_main)
+
+add_executable(event_demo ${CMAKE_SOURCE_DIR}/event_demo.cc)
+target_link_libraries(event_demo base event)

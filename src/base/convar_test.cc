@@ -6,17 +6,17 @@
 #include <thread>
 
 TEST(ConVar, SignalAllTest) {
-  base::Mutex m;
+  base::Mutex  m;
   base::ConVar con(m);
-  std::thread t1([&con]() {
+  std::thread  t1([&con]() {
     con.Wait();
     std::cout << "waited" << std::endl;
   });
-  std::thread t3([&con]() {
+  std::thread  t3([&con]() {
     con.Wait();
     std::cout << "waited 2" << std::endl;
   });
-  std::thread t2([&con]() {
+  std::thread  t2([&con]() {
     sleep(1);
     con.SignalAll();
   });
@@ -26,13 +26,13 @@ TEST(ConVar, SignalAllTest) {
 }
 
 TEST(ConVar, SignalTest) {
-  base::Mutex m;
+  base::Mutex  m;
   base::ConVar con(m);
-  std::thread t1([&con]() {
+  std::thread  t1([&con]() {
     con.Wait();
     std::cout << "waited" << std::endl;
   });
-  std::thread t2([&con]() {
+  std::thread  t2([&con]() {
     sleep(1);
     con.Signal();
   });

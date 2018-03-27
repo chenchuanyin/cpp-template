@@ -2,3 +2,6 @@ Language:        Cpp
 BasedOnStyle:  Google
 AlignConsecutiveAssignments: true
 AlignConsecutiveDeclarations: true
+FixNamespaceComments: true
+AlignAfterOpenBracket: BAS_Align
+ReflowComments: true
