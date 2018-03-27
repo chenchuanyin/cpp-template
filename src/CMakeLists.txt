@@ -27,4 +27,4 @@ add_executable(string_unittest ${CMAKE_SOURCE_DIR}/string_unittest.cc)
 target_link_libraries(string_unittest glog absl_strings gtest gtest_main)
 
 add_executable(event_demo ${CMAKE_SOURCE_DIR}/event_demo.cc)
-target_link_libraries(event_demo base event)
+target_link_libraries(event_demo base event glog)
